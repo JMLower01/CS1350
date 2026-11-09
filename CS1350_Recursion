@@ -1,0 +1,119 @@
+# Unit 2.1
+def sum_natural(n):
+    """
+    Calculate sum of natural numbers from 1 to n recursively.
+    Example: sum_natural(5) = 1 + 2 + 3 + 4 + 5 = 15
+    """
+    if n == 0:
+        return 0
+    return n + sum_natural(n-1)
+    # TODO: Implement this
+    # Hint: What's the base case? When n = 0 or n = 1?
+    # Hint: How can you express sum(n) in terms of sum(n-1)?
+# Test cases:
+# sum_natural(5) should return 15
+# sum_natural(10) should return 55
+# sum_natural(1) should return 1
+
+#Unit 2.2
+
+def count_digits(n):
+    """
+    Count the number of digits in n recursively.
+    Example: count_digits(1234) = 4
+    Example: count_digits(7) = 1
+    """
+    # TODO: Implement this
+    # Hint: How many digits does n // 10 have?
+    # Hint: What's the base case? Single digit number?
+    if n // 10 == 0:
+        return 1
+    return 1 + count_digits(n // 10)
+# Test cases:
+# count_digits(1234) should return 4
+# count_digits(987654321) should return 9
+# count_digits(5) should return 1
+
+#Unit 2.3
+
+def is_palindrome(s):
+    """
+    Check if string s is a palindrome recursively.
+    Ignore case and consider only alphanumeric characters.
+    Example: is_palindrome("A man a plan a canal Panama") = True
+    Example: is_palindrome("race a car") = False
+    """
+    s = ''.join(s.split())
+    if len(s) == 0:
+        return False
+    elif len(s) < 2:
+        return True
+    elif s[0].lower() != s[-1].lower():
+        return False
+    else:
+        return is_palindrome(s[1:-1])
+    # TODO: Implement this
+    # Hint: Compare first and last characters
+    # Hint: What happens to the middle?
+    # Hint: What are the base cases? (empty string, single char)
+# Test cases:
+# is_palindrome("racecar") should return True
+# is_palindrome("hello") should return False
+# is_palindrome("a") should return True
+
+#### Exercise 4.1: Beginner - Power Function
+
+def power(x, n):
+    """
+    Calculate x raised to the power n recursively.
+    Assume n is a non-negative integer.
+    Example: power(2, 5) = 32
+    Example: power(3, 0) = 1
+    """
+    if n == 0:
+        return 1
+    else:
+        return x * power(x, n-1)
+    # TODO: Implement this
+    # Hint: x^n = x * x^(n-1)
+    # Hint: What's x^0?
+print(power(5, 3))
+# Test cases:
+# power(2, 5) should return 32
+# power(3, 0) should return 1
+# power(5, 3) should return 125
+
+#### Exercise 4.2: Intermediate - Generate All Binary Strings
+
+def generate_binary_strings(n):
+    """
+    Generate all binary strings of length n.
+    Example: generate_binary_strings(2) = ['00', '01', '10', '11']
+    Example: generate_binary_strings(3) = ['000', '001', '010', '011', '100', '101', '110', '111']
+    """
+    # TODO: Implement this
+    # Hint: For each position, you can place either '0' or '1'
+    # Hint: Use a helper function that builds strings character by character
+    pass
+
+# Test cases:
+# generate_binary_strings(2) should return ['00', '01', '10', '11']
+# generate_binary_strings(1) should return ['0', '1']
+
+#### Exercise 4.3: Advanced - Subset Sum Problem
+
+def subset_sum(nums, target):
+    """
+    Check if any subset of nums adds up to target.
+    Example: subset_sum([3, 34, 4, 12, 5, 2], 9) = True (3 + 4 + 2 = 9)
+    Example: subset_sum([3, 34, 4, 12, 5, 2], 30) = False
+    """
+    # TODO: Implement this
+    # Hint: For each number, you have two choices: include it or exclude it
+    # Hint: Use index to track position in array
+    pass
+
+# Test cases:
+# subset_sum([3, 34, 4, 12, 5, 2], 9) should return True
+# subset_sum([1, 2, 3, 4], 10) should return True
+# subset_sum([1, 2, 3], 7) should return False
