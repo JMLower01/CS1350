@@ -77,7 +77,6 @@ def power(x, n):
     # TODO: Implement this
     # Hint: x^n = x * x^(n-1)
     # Hint: What's x^0?
-print(power(5, 3))
 # Test cases:
 # power(2, 5) should return 32
 # power(3, 0) should return 1
@@ -117,3 +116,30 @@ def subset_sum(nums, target):
 # subset_sum([3, 34, 4, 12, 5, 2], 9) should return True
 # subset_sum([1, 2, 3, 4], 10) should return True
 # subset_sum([1, 2, 3], 7) should return False
+
+def binary_search(numbers, num):
+    """
+    Search for target in sorted array arr[left:right+1].
+    Return index if found, -1 otherwise.
+    """
+    if not numbers:
+        return False
+    mid = len(numbers) // 2
+    if numbers[mid] == num:
+        return True
+    elif numbers[mid] > num:
+        return binary_search(numbers[:mid], num)
+    else:
+        return binary_search(numbers[mid+1:], num)
+    
+        
+    # TODO: Implement recursive binary search
+    # TODO: Analyze time complexity
+    # TODO: Analyze space complexity
+    pass
+print(binary_search([2, 3, 5, 7, 10], 3))
+# Requirements:
+# 1. Implement the function
+# 2. Write the recurrence relation
+# 3. Prove time complexity is O(log n)
+# 4. Compare space complexity with iterative version
